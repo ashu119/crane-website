@@ -19,7 +19,7 @@
       position: relative;
     }
 
-    /* logo.jpeg STYLE - SABI KUCH THEEK */
+    /* logo.jpeg STYLE */
     .logo {
       position: absolute;
       top: 20px;
@@ -38,7 +38,7 @@
       text-shadow: 4px 4px 10px black; 
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-top: 80px; /* Logo neeche jagah den layi */
+      margin-top: 80px;
     }
 
     header p {
@@ -117,9 +117,11 @@
       padding: 10px;
     }
 
+    /* GALLERY IMAGE STYLE - CHHOTA KAR DITTA */
     .gallery img {
-      width: 100%;
-      margin-bottom: 15px;
+      width: 70%; /* Pehle 100% si, hun 70% hai */
+      height: auto;
+      margin: 10px auto; /* Margin vi ghatta ditta, te beech vich dikhan layi auto */
       border-radius: 5px;
       display: block;
     }
@@ -166,7 +168,7 @@
 <body>
 
 <!-- Hamburger Icon -->
-<div class="menu-icon" onclick="="toggleMenu()">☰</div>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
 
 <!-- Sidebar Menu -->
 <div id="mySidebar" class="sidebar">
@@ -177,7 +179,7 @@
 </div>
 
 <header>
-  <!-- LOGO - FILE NAME logo.jpeg HI RAKHNA -->
+  <!-- LOGO -->
   <img src="logo.jpeg" alt="Taqdeer Crane Hire Logo" class="logo">
   
   <h1>TAQDEER CRANE HIRE</h1>
