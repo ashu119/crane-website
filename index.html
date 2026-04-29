@@ -16,28 +16,42 @@
       color: white;
       padding: 60px 20px;
       text-align: center;
-      margin-left: 200px; /* Menu layi space */
     }
 
-    /* Side Menu Style */
+    /* Hamburger Icon Style */
+    .menu-icon {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 30px;
+      color: yellow;
+      background: black;
+      padding: 5px 15px;
+      border-radius: 5px;
+      z-index: 1001;
+      cursor: pointer;
+    }
+
+    /* Side Menu Style (Hidden by Default) */
     .sidebar {
       height: 100%;
-      width: 200px;
+      width: 0;
       position: fixed;
-      z-index: 1;
+      z-index: 1000;
       top: 0;
       left: 0;
       background-color: #000;
       overflow-x: hidden;
-      padding-top: 60px;
+      transition: 0.5s;
+      padding-top: 80px;
     }
 
     .sidebar a {
-      padding: 12px 16px;
+      padding: 15px 25px;
       text-decoration: none;
       font-size: 18px;
       color: yellow;
-      display: block; /* Eha karan naal eh neeche aunde ne (Vertical) */
+      display: block;
       font-weight: bold;
     }
 
@@ -46,8 +60,8 @@
     }
 
     .main-content {
-      margin-left: 200px; /* Menu de naal align */
       padding: 20px;
+      transition: margin-left 0.5s;
     }
 
     .box {
@@ -72,7 +86,6 @@
       background: black;
       text-align: center;
       padding: 10px;
-      margin-left: 200px;
     }
 
     .gallery img {
@@ -95,32 +108,78 @@
       border-radius: 3px;
       font-size: 16px;
     }
+
+    /* Experience Section Style */
+    .experience-row {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    .exp-box {
+      background: #333;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+      min-width: 120px;
+      border-bottom: 3px solid yellow;
+    }
+
+    .exp-number {
+      font-size: 40px;
+      font-weight: bold;
+      color: yellow;
+    }
   </style>
     
 </head>
 <body>
 
-<!-- Sidebar / Left Menu -->
-<div class="sidebar">
-  <a href="#home">Home</a>
-  <a href="#services">Services</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+<!-- Hamburger Icon -->
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<!-- Sidebar Menu -->
+<div id="mySidebar" class="sidebar">
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#projects" onclick="toggleMenu()">Projects</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
 </div>
 
-<!-- Header -->
 <header>
   <h1>Taqdeer crane hire</h1>
   <p>Professional Motor Crane Services</p>
 </header>
 
-<!-- Main Content Area -->
-<div class="main-content">
+<div id="main" class="main-content">
 
   <section id="home">
     <div class="box">
       <h2>About Us</h2>
       <p>We provide reliable and safe crane services with years of experience in heavy lifting and construction projects.</p>
+    </div>
+
+    <div class="box">
+      <h2>🎖️ Experience & Trust</h2>
+      <div class="experience-row">
+        <div class="exp-box">
+          <div class="exp-number">15+</div>
+          <div>Years Experience</div>
+        </div>
+        <div class="exp-box">
+          <div class="exp-number">500+</div>
+          <div>Projects Done</div>
+        </div>
+        <div class="exp-box">
+          <div class="exp-number">100%</div>
+          <div>Safety Record</div>
+        </div>
+        <div class="exp-box">
+          <div class="exp-number">24/7</div>
+          <div>Available Service</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -155,13 +214,10 @@
       <h2>Our Trusted Clients</h2>
       <p>We have proudly worked with leading companies including:</p>
       <ul class="clients-list">
-        <li>🏢 N G Management - Real Estate Agents In Ahmedabad
-</li>
-        <li>🏢 K P Enterprise in Jamnagar, Gujarat, India - Company Profile
-</li>
-        <li>🏢 Harij solar farm - Global Energy Monitor</li>
+        <li>🏢 IN G Management - Real Estate Agents In Ahmedabad</li>
+        <li>🏢 K P Enterprise in Jamnagar, Gujarat, India</li>
+        <li>🏢 Harij Solar Farm - Global Energy Monitor</li>
         <li>🏢 Rachana Construction & Infrastructure</li>
-       
       </ul>
     </div>
   </section>
@@ -176,11 +232,26 @@
     </div>
   </section>
 
-</div> <!-- Main Content End -->
+</div>
 
 <footer>
   <p>© 2026 Taqdeer Crane Hire</p>
 </footer>
+
+<script>
+function toggleMenu() {
+  var sidebar = document.getElementById("mySidebar");
+  var main = document.getElementById("main");
+  
+  if (sidebar.style.width === "250px") {
+    sidebar.style.width = "0";
+    main.style.marginLeft = "0";
+  } else {
+    sidebar.style.width = "250px";
+    main.style.marginLeft = "250px";
+  }
+}
+</script>
 
 </body>
 </html>
