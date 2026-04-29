@@ -16,15 +16,29 @@
       color: white;
       padding: 80px 20px;
       text-align: center;
+      position: relative;
+    }
+
+    /* LOGO STYLE */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 2px 2px 8px black;
     }
 
     /* HEADER TEXT STYLE - EXTRA BOLD */
     header h1 {
-      font-size: 55px; /* HOR BADA */
-      font-weight: 900; /* FULL EXTRA BOLD */
-      text-shadow: 4px 4px 10px black; /* SHADOW HOR DARK */
+      font-size: 55px; 
+      font-weight: 900; 
+      text-shadow: 4px 4px 10px black; 
       letter-spacing: 3px;
       text-transform: uppercase;
+      margin-top: 80px; /* Logo neeche jagah den layi */
     }
 
     header p {
@@ -163,6 +177,9 @@
 </div>
 
 <header>
+  <!-- LOGO YAHAN ADD HO JAYEGA -->
+  <img src="YOUR_LOGO_LINK_HAI" alt="Taqdeer Crane Hire Logo" class="logo">
+  
   <h1>TAQDEER CRANE HIRE</h1>
   <p>Professional Motor Crane Services</p>
 </header>
